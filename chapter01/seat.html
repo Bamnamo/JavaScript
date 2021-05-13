@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seat</title>
+    <style>
+        table, td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
 <script>
@@ -14,7 +25,20 @@
         rowNum = parseInt(memNum / colNum);
     else
         rowNum = parseInt(memNum / colNum) + 1;
-    document.write("모두" + rowNum + " 개의 줄이 필요합니다.");
+    //document.write("모두" + rowNum + " 개의 줄이 필요합니다.");
+    var i, j;
+    document.write("<table>");
+    for (i = 0; i < rowNum; i++) {
+        document.write("<tr>");
+        for (j = 1; j <= colNum; j++) {
+            seatNo = i * colNum + j; //좌석번호
+            if (seatNo > memNum) break;
+            document.write("<td>좌석" + seatNo + "  </td>");
+
+        }
+        document.write("</tr>"); //줄바꾸기
+    }
+    document.write("</tablr>");
 </script>
 </body>
 </html>
