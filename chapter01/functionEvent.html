@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수와 이벤트</title>
+</head>
+<body>
+<script>
+    var a = parseInt(prompt("숫자를 입력하세요"));
+    var b = parseInt(prompt("숫자를 입력하세요"));
+    addNumber(a, b);
+
+    function addNumber(a, b) {
+        var sum = a + b;  // 지역 변수 선언
+        multi = a * b;      //  전역 변수 선언
+        document.write(sum + "<br>");    // 지역 변수 사용
+        document.write(multi); // 전역 변수 사용
+    }
+
+    //호이스팅
+    var x = 10;
+
+    function displayNumber() {
+        console.log("x is " + x);
+        console.log("y is " + y);
+        var y = 20;
+    }
+
+    displayNumber();
+
+    var sum = addNumber(40, 50);
+    console.log(sum);
+    sum = 60;
+    console.log(sum);
+    var sum = 100;
+</script>
+
+</body>
+</html>
