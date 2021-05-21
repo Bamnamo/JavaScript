@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>CUP-DOM</title>
+    <style>
+        #container {
+            width: 20vw;
+            margin: 10px auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #rect {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #222;
+            margin: 30px auto;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <img src="../image/cup-1.png" id="cup">
+    <img src="../image/easys-1.jpg" id="cover">
+
+    <p>도형 위로 마우스 포인터를 올려놓으세요.</p>
+    <div id="rect"></div>
+</div>
+
+<script>
+    var cup = document.querySelector("#cup");
+    cup.onclick = function (event) {
+        alert("이벤트 유형: " + event.type + ", 이벤트 발생 위치 : " + event.pageX + "," + event.pageY);
+        alert("클릭한 이미지 파일 : " + this.src);
+    }
+
+    var cover = document.getElementById("cover");
+    cover.addEventListener("mouseover", changePic, false);
+    cover.addEventListener("mouseout", originPic, false);
+
+    function changePic() {
+        cover.src = "../image/easys-2.jpg";
+    }
+
+    function originPic() {
+        cover.src = "../image/easys-1.jpg";
+    }
+
+    var myRect = document.querySelector("#rect");
+    myRect.addEventListener("mouseover", function () {
+        myRect.style.backgroundColor = "green";
+        myRect.style.borderRadius = "50%";
+    });
+
+    myRect.addEventListener("mouseout", function () {
+        myRect.style.backgroundColor = "";
+        myRect.style.borderRadius = "";
+    });
+
+</script>
+
+</body>
+</html>
