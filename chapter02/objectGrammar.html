@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+<script>
+
+    var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};         /* 객체 생성 */
+
+    document.write(grades["egoing"]);
+    document.write("<br>")
+    document.write(grades["k8805"]);
+    document.write("<br>")
+    document.write(grades["sorialgi"]);
+    document.write("<br>")
+
+    // 객체와 반복문
+    for (key in grades) {
+        document.write("key : " + key + " value : " + grades[key] + "<br />");
+    }
+</script>
+</body>
+</html>
