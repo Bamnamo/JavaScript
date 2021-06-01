@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>SUM</title>
+</head>
+<body>
+<script>
+    function solution(absolutes, signs) {
+        let result = 0;
+        for (let i = 0; i < absolutes.length; i++) {
+            if (signs[i] > 0) result += absolutes[i];
+            else result -= absolutes[i];
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

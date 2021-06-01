@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>ES6</title>
+</head>
+<body>
+<ul>
+    <li>orange</li>
+    <li>apple</li>
+    <li>banana</li>
+    <li>strawberry</li>
+</ul>
+
+<script>
+    function print() {
+        let list = document.querySelectorAll("li");
+        let listArray = Array.from(list);
+        let resultArray = listArray.filter(function (v) {
+            return v.innerText.includes("e")
+        });
+        console.log(resultArray.length);
+
+    }
+
+    print();
+</script>
+</body>
+</html>
