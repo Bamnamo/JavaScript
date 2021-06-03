@@ -53,11 +53,29 @@ function App() {
         {name === '리액트' && <h1>리액트입니다.</h1>}
     </div>;
 }
- */
+
 
 function App() {
     const name = undefined;
     return name || '값이 undefined입니다.';
+}
+
+ */
+
+function App() {
+    const name = '리액트';
+    return (
+        <div style={{
+            backgroundColor: 'black',
+            color: 'aqua',
+            fontSize: '48px',
+            fontWeight: 'bold',
+            padding: 16
+        }}
+        >
+            {name}
+        </div>
+    );
 }
 
 export default App;
