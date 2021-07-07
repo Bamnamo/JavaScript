@@ -1,7 +1,10 @@
-import React, {Fragment} from 'react';
+import React, {Component} from 'react';
+import MyComponent from "./MyComponent";
+//import Counter from "./Counter";
 //import logo from './logo.svg';
 //import './App.css';
-
+import Say from './Say';
+import EventPractice from "./EventPractice";
 /*
 function App() {
     return (
@@ -60,22 +63,16 @@ function App() {
     return name || '값이 undefined입니다.';
 }
 
+
+
+const App = () => {
+    return <Say/>;
+};
+
  */
 
-function App() {
-    const name = '리액트';
-    return (
-        <div style={{
-            backgroundColor: 'black',
-            color: 'aqua',
-            fontSize: '48px',
-            fontWeight: 'bold',
-            padding: 16
-        }}
-        >
-            {name}
-        </div>
-    );
-}
+const App = () => {
+    return <EventPractice/>;
+};
 
 export default App;
