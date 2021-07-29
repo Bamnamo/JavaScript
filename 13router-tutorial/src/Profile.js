@@ -1,4 +1,5 @@
 import React from "react";
+import WithRouteSample from "./WithRouteSample";
 
 const data = {
     shivash: {
@@ -25,6 +26,7 @@ const Profile = ({match}) => {
             <p>
                 {profile.description}
             </p>
+            <WithRouteSample/>
         </div>
     );
 };

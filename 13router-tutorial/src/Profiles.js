@@ -1,18 +1,22 @@
 import React from "react";
-import {Link, Route} from 'react-router-dom';
+import {Link, NavLink, Route} from 'react-router-dom';
 import Profile from "./Profile";
-import WithRouteSample from "./WithRouteSample";
+
 
 const Profiles = () => {
+    const activeStyle = {
+        background: 'black',
+        color: 'white',
+    };
     return (
         <div>
             <h3>사용자 목록:</h3>
             <ul>
                 <li>
-                    <Link to="/profiles/shivash">shivash</Link>
+                    <NavLink activeStyle={activeStyle} to="/profiles/shivash">shivash</NavLink>
                 </li>
                 <li>
-                    <Link to="/profiles/gildong">gildong</Link>
+                    <NavLink activeStyle={activeStyle} to="/profiles/gildong">gildong</NavLink>
                 </li>
             </ul>
 
@@ -22,7 +26,7 @@ const Profiles = () => {
                 render={() => <div>사용자를 선택해 주세요</div>}
             />
             <Route path="/profiles/:username" component={Profile}/>
-            <WithRouteSample/>
+
         </div>
     );
 };
