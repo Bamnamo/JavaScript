@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const TodoItem = ({todo, onToggle, onRemove}) => {
   return (
@@ -10,16 +10,16 @@ const TodoItem = ({todo, onToggle, onRemove}) => {
             readOnly={true}
         />
         <span style={{textDecoration: todo.done ? 'line-through' : 'none'}}>
-          {todo.text}
-        </span>
+        {todo.text}
+      </span>
         <button onClick={() => onRemove(todo.id)}>삭제</button>
       </div>
   );
 };
 
 const Todos = ({
-  input,
-  todos,
+  input, // 인풋에 입력되는 텍스트
+  todos, // 할 일 목록이 들어있는 객체
   onChangeInput,
   onInsert,
   onToggle,
@@ -28,17 +28,15 @@ const Todos = ({
   const onSubmit = e => {
     e.preventDefault();
     onInsert(input);
-    onChangeInput('');
+    onChangeInput(''); // 등록 후 인풋 초기화
   };
-
   const onChange = e => onChangeInput(e.target.value);
-
   return (
       <div>
-        <from onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
           <input value={input} onChange={onChange}/>
           <button type="submit">등록</button>
-        </from>
+        </form>
         <div>
           {todos.map(todo => (
               <TodoItem
