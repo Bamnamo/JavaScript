@@ -16,9 +16,9 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 // We can't use a relative path in HTML because we don't want to load something
 // like /todos/42/static/js/bundle.7289d.js. We have to know the root.
 const publicUrlOrPath = getPublicUrlOrPath(
-  process.env.NODE_ENV === 'development',
-  require(resolveApp('package.json')).homepage,
-  process.env.PUBLIC_URL
+    process.env.NODE_ENV === 'development',
+    require(resolveApp('package.json')).homepage,
+    process.env.PUBLIC_URL
 );
 
 const buildPath = process.env.BUILD_PATH || 'build';
@@ -40,7 +40,7 @@ const moduleFileExtensions = [
 // Resolve file paths in the same order as webpack
 const resolveModule = (resolveFn, filePath) => {
   const extension = moduleFileExtensions.find(extension =>
-    fs.existsSync(resolveFn(`${filePath}.${extension}`))
+      fs.existsSync(resolveFn(`${filePath}.${extension}`))
   );
 
   if (extension) {
@@ -67,9 +67,9 @@ module.exports = {
   proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
   swSrc: resolveModule(resolveApp, 'src/service-worker'),
+  ssrIndexJs: resolveApp('src/index.server.js'), // 서버 사이드 렌더링 엔트리
+  ssrBuild: resolveApp('dist'), // 웹팻 처리 후 저장 경로
   publicUrlOrPath,
 };
-
-
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
